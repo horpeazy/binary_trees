@@ -25,11 +25,13 @@ int binary_tree_size(const binary_tree_t *tree)
  */
 int height(const binary_tree_t *node)
 {
+	int leftHeight, rightHeight;
+
 	if (node == NULL)
     		return 0;
 
-  	int leftHeight = height(node->left);
-  	int rightHeight = height(node->right);
+  	leftHeight = height(node->left);
+  	rightHeight = height(node->right);
 
   	if (leftHeight > rightHeight)
 		return (leftHeight + 1);
