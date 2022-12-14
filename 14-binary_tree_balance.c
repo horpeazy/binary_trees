@@ -5,7 +5,7 @@
  * @node: pointer to the root node
  * Return: hright of tree
  */
-size_t re_height(const binary_tree_t *node)
+/*size_t re_height(const binary_tree_t *node)
 {
 	if (node == NULL)
 		return (0);
@@ -16,7 +16,7 @@ size_t re_height(const binary_tree_t *node)
 	if (leftHeight > rightHeight)
 		return (leftHeight + 1);
 	return (rightHeight + 1);
-}
+}*/
 
 /**
  * binary_tree_balance - calculates the balance tree factor
