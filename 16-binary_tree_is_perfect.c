@@ -6,9 +6,9 @@
  * @tree: pointer to the root node
  * Return: size of the tree
  */
-size_t binary_tree_size(const binary_tree_t *tree)
+int binary_tree_size(const binary_tree_t *tree)
 {
-	size_t left, right;
+	int left, right;
 
 	if (!tree)
 		return (0);
@@ -23,7 +23,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
  * @node: pointer to the root node
  * Return: height of tree
  */
-size_t height(const binary_tree_t *node)
+int height(const binary_tree_t *node)
 {
 	if (node == NULL)
     		return 0;
