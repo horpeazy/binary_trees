@@ -10,8 +10,8 @@ size_t re_height(const binary_tree_t *node)
 	if (node == NULL)
 		return (0);
 
-	int leftHeight = height(node->left);
-	int rightHeight = height(node->right);
+	int leftHeight = re_height(node->left);
+	int rightHeight = re_height(node->right);
 
 	if (leftHeight > rightHeight)
 		return (leftHeight + 1);
