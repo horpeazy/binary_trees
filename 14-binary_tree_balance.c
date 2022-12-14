@@ -1,11 +1,11 @@
 #include "binary_trees.h"
 
 /**
- * height - measure the height of a binary tree
+ * re_height - measure the height of a binary tree
  * @node: pointer to the root node
  * Return: hright of tree
  */
-size_t height(const binary_tree_t *node)
+size_t re_height(const binary_tree_t *node)
 {
 	if (node == NULL)
 		return (0);
@@ -30,8 +30,8 @@ int binary_tree_balance(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-	left = height(tree->left);
-	right = height(tree->right);
+	left = re_height(tree->left);
+	right = re_height(tree->right);
 
 	return (left - right);
 }
