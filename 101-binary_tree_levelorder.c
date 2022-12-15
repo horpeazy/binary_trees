@@ -49,6 +49,7 @@ binary_tree_t *dequeue(queue_t *queue)
 	{
 		queue->is_empty = 1;
 	}
+	free(q_node->node);
 	free(q_node);
 	return (node);
 }
