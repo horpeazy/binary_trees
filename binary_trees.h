@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -19,6 +20,32 @@ typedef struct binary_tree_s
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
 } binary_tree_t;
+
+/**
+ * struct queue_node_s - Queue node
+ *
+ * @node: pointer to a binary tree node
+ * @next: pointer to the next node
+ */
+typedef struct queue_node_s
+{
+	binary_tree_t *node;
+	struct queue_node_s *next;
+} queue_node_t;
+
+/**
+ * struct queue_s - Queue
+ *
+ * @head: pointer to the head node
+ * @tail: pointer to the tail node
+ * @is_empty: indiactes if queue is empty or not
+ */
+typedef struct queue_s
+{
+	queue_node_t *head;
+	queue_node_t *tail;
+	int is_empty;
+} queue_t;
 
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
@@ -41,5 +68,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 #endif /* _BINARY_TREES_H_ */
