@@ -2,8 +2,8 @@
 
 /**
  * is_child - checks if a node is a child of another
- * @parent - parent node
- * @child - child node to check
+ * @parent: parent node
+ * @child: child node to check
  * Return: 1 if true, 0 otherwise
  */
 int is_child(binary_tree_t *parent, binary_tree_t *child)
@@ -30,7 +30,8 @@ int is_child(binary_tree_t *parent, binary_tree_t *child)
  * @second: pointer tothe second node
  * Return: pointer to the LCA
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+					const binary_tree_t *second)
 {
 	binary_tree_t *first_node, *second_node;
 
