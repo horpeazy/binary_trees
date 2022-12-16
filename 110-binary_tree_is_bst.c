@@ -12,12 +12,12 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 		return 0;
 	}
 
-	if (tree->left != NULL && tree->value < tree->left->value)
+	if (tree->left != NULL && tree->n <= tree->left->n)
 	{
 		return 0;
 	}
 
-	if (tree->right != NULL && tree->value > tree->right->value)
+	if (tree->right != NULL && tree->n > tree->right->n)
 	{
 	return 0;
 	}
