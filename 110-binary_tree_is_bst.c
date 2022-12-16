@@ -20,8 +20,10 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 	if (tree->right && tree->n >= tree->right->n)
 		return (0);
 
-	left = binary_tree_is_bst(tree->left);
-	right = binary_tree_is_bst(tree->right);
+	if (tree->left)
+		left = binary_tree_is_bst(tree->left);
+	if (tree->right)
+		right = binary_tree_is_bst(tree->right);
 
 	return (left && right);
 }
