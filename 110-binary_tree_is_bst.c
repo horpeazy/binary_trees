@@ -7,23 +7,25 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	int left, right;
-	
-	if (!tree)
+	if (tree == NULL)
+	{
+		return 0;
+	}
+
+	if (tree->left != NULL && tree->value < tree->left->value)
+	{
+		return 0;
+	}
+
+	if (tree->right != NULL && tree->value > tree->right->value)
+	{
+	return 0;
+	}
+
+	if (!binary_tree_is_bst(tree->left) || !binary_tree_is_bst(tree->right))
+	{
 		return (0);
+	}
 
-	left = 1;
-	right = 1;
-
-	if (tree->left && tree->n <= tree->left->n)
-		return (0);
-	if (tree->right && tree->n >= tree->right->n)
-		return (0);
-
-	if (tree->left)
-		left = binary_tree_is_bst(tree->left);
-	if (tree->right)
-		right = binary_tree_is_bst(tree->right);
-
-	return (left && right);
+	return (1);
 }
